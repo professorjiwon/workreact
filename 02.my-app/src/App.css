@@ -1,38 +1,18 @@
-.App {
+div {  /* div는 무조건 root를 의미 : <></> , <div></div>, <Fragment></Fragment> */
+  background-color: rgb(5, 5, 64);
+  color: white;
+  padding: 50px;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  color: red;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h3 {
+  background-color: blueviolet;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.class1 {
+  border: 2px dotted yellow;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#id1 {
+  color:yellowgreen;
 }
