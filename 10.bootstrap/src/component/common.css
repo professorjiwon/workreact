@@ -1,0 +1,17 @@
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 15vh;
+    background-color: rgb(224, 224, 224);
+}
+header img {
+   height: 50px;
+}
+footer {
+    padding: 10px;
+    padding-left: 30%;
+    font-size: small;
+    background-color: rgb(224, 224, 224);
+    text-align: left;
+}
