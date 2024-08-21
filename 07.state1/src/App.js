@@ -1,23 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
+import Counter from './component/Counter';
+import Light_on_off from './component/Light-on-off';
+import Member_enroll from './component/Member-enroll';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Counter /><hr/>
+      <Light_on_off /><hr/>
+      <Member_enroll />
     </div>
   );
 }

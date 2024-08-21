@@ -1,0 +1,13 @@
+.App {
+  text-align: center;
+}
+
+header, footer {
+  background-color: azure;
+  height: 15vh;
+  line-height: 15vh;
+}
+
+section {
+  height: 70vh;
+}
