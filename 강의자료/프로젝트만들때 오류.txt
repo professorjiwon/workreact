@@ -1,0 +1,2 @@
+cmd창을 본인 워크스페이스 위치로 변경 후 
+npm config set prefix "C:\Program Files\nodejs"
