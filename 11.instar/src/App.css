@@ -25,3 +25,11 @@ span {
   background-color: rgb(208, 222, 182);
   padding: 5px 0 5px 10px;
 }
+
+.addBtn {
+  margin-top: 10px;
+}
+
+.deleteBtn {
+  margin-bottom: 10px;
+}
