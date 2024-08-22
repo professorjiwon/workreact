@@ -17,7 +17,7 @@ function Header() {
                     <Button variant="outline-secondary" size="sm">회원가입</Button>&emsp;
                     <Button variant="outline-success" size="sm" onClick={handleShow}>로 그 인</Button>
                 </div>
-                <Login show={show} onHide={handleClose} />
+                <Login show={show} />
             </header>
         </>
     )
