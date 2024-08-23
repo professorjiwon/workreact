@@ -42,7 +42,7 @@ function App() {
             </Container>
           </>
         }/>
-        <Route path='/detail/:index' element={ <Detail clothes={clothes}/> } />
+        <Route path='/detail/:index' element={ <Detail clothes={clothes} bg="green" /> } />
         <Route path='*' element={<div>없는 페이지 입니다.</div>} />
       </Routes>
     </div>
