@@ -60,6 +60,14 @@ function App() {
                       alert('더이상 상품이 없습니다');
                    })
             }}>서버에서 데이터 가져오기</Button>
+            {/* 
+                * 서버로 보낼때
+                  axios.post('url',데이터)
+                  ex) axios.post('url',{name:'kim'})
+
+                * 동시에 요청을 여러개 할 때
+                  Promise.all( [axios.get('url'), axios.get('url'), axios.post('url',데이터)] )
+            */}
           </>
         }/>
         <Route path='/detail/:index' element={ <Detail clothes={clothes} bg="green" /> } />
