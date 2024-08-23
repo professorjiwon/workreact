@@ -13,6 +13,7 @@ import axios from 'axios';
 */
 function App() {
   let [clothes, setClothes] = useState(pList);
+  let [clickCount, setClickCount] = useState(2);
 
   // 페이지의 이동을 도와주는 함수
   let navigate = useNavigate();
@@ -47,11 +48,12 @@ function App() {
             </Container>
 
             <Button variant="info" onClick={() => {
-              axios.get('https://raw.githubusercontent.com/professorjiwon/data/main/data3.json')
+              axios.get(`https://raw.githubusercontent.com/professorjiwon/data/main/data${clickCount}.json`)
                    .then(result => {
                       console.log(result.data);
-                      let copy = [...result.data, ...clothes];
+                      let copy = [...clothes, ...result.data];
                       setClothes(copy);
+                      setClickCount(clickCount+1);
                    })
                    .catch(() => {
                       console.log('실패');
