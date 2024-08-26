@@ -1,7 +1,10 @@
 import { Table, Button } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 // 변경시 1.
-import { changeName } from '../store/store';
+// import { changeName, increase } from '../store/store';
+
+// userSlice로 분할 할 후 import
+import { changeName, increase } from '../store/userSlice';
 
 function Cart() {
     /*
@@ -37,7 +40,7 @@ function Cart() {
                             <td>{c.count}</td>
                             <td>
                                 <Button variant="outline-secondary" onClick={() => {
-                                    dispatch(a())
+                                    dispatch(increase(3))
                                 }}>
                                     +
                                 </Button>
