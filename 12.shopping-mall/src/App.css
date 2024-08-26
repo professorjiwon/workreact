@@ -21,3 +21,15 @@ img {
   opacity: 1;
   transition: opacity 1s;
 }
+
+/* 크기 조절 애니메이션 */
+/*
+.start {
+  transform: scale(0);
+}
+
+.end {
+  transform: scale(1);
+  transition: all 1s;
+}
+*/
