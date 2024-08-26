@@ -44,7 +44,7 @@ function App() {
                 { 
                   clothes.map((p, i)=>{
                     return(
-                      <PListCol clothes={p} i={i+1}/>
+                      <PListCol clothes={p} i={i+1} key={i}/>
                     )
                   })
                 }
