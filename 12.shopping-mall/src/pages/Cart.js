@@ -1,10 +1,20 @@
 import { Table } from 'react-bootstrap';
+import { useSelector } from 'react-redux';
 
 function Cart() {
+    /*
+    let state = useSelector((state) => {return state})
+    console.log(state);
+    console.log(state.user);
+    */
+
+    let state2 = useSelector(state => state.user)  // 원하는 것만 가져오기
+
     return (
         <div className='cart'>
         <br/>
-        <h2>CART LIST</h2>
+        <h2>{state2}님의 CART LIST</h2>
+        <br/>
         <Table striped bordered hover>
             <thead>
                 <tr>
