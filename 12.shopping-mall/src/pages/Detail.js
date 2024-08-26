@@ -1,13 +1,9 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Container, Row, Col, Button, Nav } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import './../App.css';
-import {Context1} from './../App';
 
 function Detail (props) {
-    // useContext() : Context1을 해체   {stock, clothes}
-    let a = useContext(Context1);
-    console.log(a);
 
     let {index} = useParams();
 

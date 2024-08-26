@@ -1,38 +1,26 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar, Container, Nav, Row, Col, Button } from 'react-bootstrap';
-import { createContext, useState } from 'react';
+import { useState } from 'react';
 import pList from './data/ProductList';
 import { Routes, Route, Link, useNavigate, Outlet } from 'react-router-dom';
 import Detail from './pages/Detail';
 import axios from 'axios';
+import Cart from './pages/Cart';
 
 /*
-    * single page application의 단점
-      - 컴포넌트사이의 state공유 어려움
-      - props로 넘겨줘야한다 
+  ** 장바구니 만들기
 
-    * 공유하는 파일을 만들어서 사용
-      1. Context Api문법
-         잘 사용하지 않음
-         - 성능 이슈
-         - 재 사용이 어렵다
-      2. Redux 같은 외부 라이브러리
-         주로 사용
+  * 외부 라이브러리 사용(Redux)
+  1) 설치 : npm install @reduxjs/toolkit react-redux
+  2) store폴더 만들고, store.js파일 만들기
+  3) index.js <Provider>로 감싸기
 */
-
-// 1. Context Api
-
-// createContext() : 보관함을 하나 만들었다 생각하면 됨
-export let Context1 = createContext();
-
 function App() {
   let [clothes, setClothes] = useState(pList);
   let [clickCount, setClickCount] = useState(2);
 
   let navigate = useNavigate();
-
-  let [stock, setStock] = useState([10, 7, 5])
 
   return (
     <div className="App">
@@ -78,12 +66,8 @@ function App() {
             }}>서버에서 데이터 가져오기</Button>
           </>
         }/>
-        <Route path='/detail/:index' element={
-          // <Context1.Provider value={{stock, clothes}}>  여러개 넘겨줄때
-          <Context1.Provider value={stock}>
-            <Detail clothes={clothes} />
-          </Context1.Provider>
-        } />
+        <Route path='/detail/:index' element={ <Detail clothes={clothes} bg="green" /> } />
+        <Route path='/cart' element={<Cart />} />
         <Route path='*' element={<div>없는 페이지 입니다.</div>} />
       </Routes>
     </div>

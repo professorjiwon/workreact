@@ -1,9 +1,20 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Container, Row, Col, Button, Nav } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import './../App.css';
+import {Context1} from './../App';
 
 function Detail (props) {
+    // useContext() : Context1을 해체   {stock, clothes}
+    /*
+    let a = useContext(Context1);
+    console.log(a);
+    console.log(a.stock);
+    */
+
+    let {stock, clothes} = useContext(Context1);
+    console.log(stock);
+    console.log(clothes);
 
     let {index} = useParams();
 
@@ -75,6 +86,8 @@ function Detail (props) {
 function TabContent({tab}) {
     let [fade, setFade] = useState('')
 
+    let {stock} = useContext(Context1);
+
     useEffect(() => {
         setTimeout(() => {setFade('end')},100)
         return () => {
@@ -84,7 +97,7 @@ function TabContent({tab}) {
 
     return( 
         <div className={fade}>
-            { [<div>내용 0</div>, <div>내용 1</div>, <div>내용 2</div>][tab] }
+            { [<div>{stock}</div>, <div>{stock[1]}</div>, <div>{stock[tab]}</div>][tab] }
         </div>
     )
 }
