@@ -18,7 +18,7 @@ function Cart() {
 
     return (
         <div className='cart'><br/>
-        <h2>{state.member}님의 CART LIST</h2><br/>
+        <h2>{state.member.name} {state.member.age}님의 CART LIST</h2><br/>
         <Table striped bordered hover>
             <thead>
                 <tr>
@@ -37,9 +37,9 @@ function Cart() {
                             <td>{c.count}</td>
                             <td>
                                 <Button variant="outline-secondary" onClick={() => {
-                                    dispatch(changeName())
+                                    dispatch(a())
                                 }}>
-                                    이름바꾸기버튼
+                                    +
                                 </Button>
                             </td>
                         </tr>

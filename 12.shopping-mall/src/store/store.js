@@ -1,15 +1,37 @@
 import { configureStore, createSlice } from '@reduxjs/toolkit'
 
+// 객체나 배열 변경
+let user = createSlice({
+    name : 'user1',
+    initialState : {name : 'kim', age : 20},
+    reducers : {
+        /*
+        changeName() {
+            return {name : 'park', age : 20}
+        }
+        */
+        changeName(state) {
+            state.name = 'park'
+        },
+        a(state) {
+            state.age = 9
+        }
+    }
+})
+export let { changeName, a } = user.actions
+
+/*
 let user = createSlice({
     name : 'user1',
     initialState : 'kim',
     reducers : {
-       changeName() {
-        return 'jiwon kim'
-       }
+        changeName(state) {
+            return 'jiwon ' + state
+        }
     } 
 })
 export let { changeName } = user.actions
+*/
 
 let stock = createSlice({
     name: 'stock',
