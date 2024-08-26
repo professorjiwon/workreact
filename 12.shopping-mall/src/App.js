@@ -67,7 +67,7 @@ function App() {
 function PListCol(props) {
   return (
     <>
-      <Col lg={4}>
+      <Col md={4}>
         <img src={`${process.env.PUBLIC_URL}/img/clothes${props.i}.png`} />
         <h4>{props.clothes.title}</h4>
         <p>{props.clothes.price}</p>
