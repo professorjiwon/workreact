@@ -7,10 +7,15 @@ import { Routes, Route, Link, useNavigate, Outlet } from 'react-router-dom';
 import Detail from './pages/Detail';
 import axios from 'axios';
 
+/*
+  * ajax로 서버로부터 데이터 얻어오기
+    1. 설치하기 : npm i axios
+*/
 function App() {
   let [clothes, setClothes] = useState(pList);
   let [clickCount, setClickCount] = useState(2);
 
+  // 페이지의 이동을 도와주는 함수
   let navigate = useNavigate();
 
   return (
@@ -55,6 +60,14 @@ function App() {
                       alert('더이상 상품이 없습니다');
                    })
             }}>서버에서 데이터 가져오기</Button>
+            {/* 
+                * 서버로 보낼때
+                  axios.post('url',데이터)
+                  ex) axios.post('url',{name:'kim'})
+
+                * 동시에 요청을 여러개 할 때
+                  Promise.all( [axios.get('url'), axios.get('url'), axios.post('url',데이터)] )
+            */}
           </>
         }/>
         <Route path='/detail/:index' element={ <Detail clothes={clothes} bg="green" /> } />
