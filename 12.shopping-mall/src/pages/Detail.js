@@ -3,7 +3,12 @@ import { Container, Row, Col, Button, Nav } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import './../App.css';
 
+import { addItem } from '../store/store';
+import { useDispatch } from "react-redux";
+
 function Detail (props) {
+
+    let dispatch = useDispatch();
 
     let {index} = useParams();
 
@@ -49,7 +54,9 @@ function Detail (props) {
                         <h4>{findId.title}</h4>
                         <p>{findId.content}</p>
                         <p>{findId.price}원</p>
-                        <Button variant="info">주문하기</Button>
+                        <Button variant="info" onClick={() => {
+                            dispatch(addItem({id:findId.id, title:findId.title, count:1}))
+                        }}>장바구니에 담기</Button>
                     </Col>
                 </Row>
             </Container>

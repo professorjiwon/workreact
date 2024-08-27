@@ -29,7 +29,6 @@ function App() {
           <Navbar.Brand href="#home">Fashion Shop</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link onClick={() => { navigate('/') }}>Home</Nav.Link>
-            <Nav.Link onClick={() => { navigate('/detail')}}>Detail</Nav.Link>
             <Nav.Link onClick={() => { navigate('/cart')}}>Cart</Nav.Link>
           </Nav>
         </Container>
@@ -66,7 +65,7 @@ function App() {
             }}>서버에서 데이터 가져오기</Button>
           </>
         }/>
-        <Route path='/detail/:index' element={ <Detail clothes={clothes} bg="green" /> } />
+        <Route path='/detail/:index' element={ <Detail clothes={clothes} /> } />
         <Route path='/cart' element={<Cart />} />
         <Route path='*' element={<div>없는 페이지 입니다.</div>} />
       </Routes>
@@ -75,14 +74,18 @@ function App() {
 }
 
 function PListCol(props) {
+  const navigate = useNavigate();
+
+  const goDetail = () => {
+    navigate(`/detail/${props.i-1}`);
+  };
+
   return (
-    <>
-      <Col md={4}>
-        <img src={`${process.env.PUBLIC_URL}/img/clothes${props.i}.png`} />
-        <h4>{props.clothes.title}</h4>
-        <p>{props.clothes.price}</p>
-      </Col>
-    </>
+    <Col lg={4} onClick={goDetail} style={{ cursor: 'pointer' }}>
+      <img src={`${process.env.PUBLIC_URL}/img/clothes${props.i}.png`} />
+      <h4>{props.clothes.title}</h4>
+      <p>{props.clothes.price}</p>
+    </Col>
   )
 }
 

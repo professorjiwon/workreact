@@ -104,6 +104,10 @@ function TabContent({tab}) {
 // 배열 리턴
 /*
 function TabContent({tab}) {
+    // let array = [<div>내용 0</div>, <div>내용 1</div>, <div>내용 2</div>];
+    // array[0];
+    // [<div>내용 0</div>, <div>내용 1</div>, <div>내용 2</div>][2];
+
     return [<div>내용 0</div>, <div>내용 1</div>, <div>내용 2</div>][tab]
 }
 */
