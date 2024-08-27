@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Container, Row, Col, Button, Nav } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import './../App.css';
 
 import { addItem } from '../store/store';
@@ -40,6 +40,7 @@ function Detail (props) {
         setFade2('end')
     }, [])
 
+    const navigate = useNavigate();
 
     return (
         <div>
@@ -55,7 +56,8 @@ function Detail (props) {
                         <p>{findId.content}</p>
                         <p>{findId.price}원</p>
                         <Button variant="info" onClick={() => {
-                            dispatch(addItem({id:findId.id, title:findId.title, count:1}))
+                            dispatch(addItem({id:findId.id, title:findId.title, count:1}));
+                            navigate('/cart');
                         }}>장바구니에 담기</Button>
                     </Col>
                 </Row>
